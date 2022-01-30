@@ -15,6 +15,23 @@ db = SQLAlchemy(app)
 
 
 ### MODELS
+# association table for multi-product cart
+order_product = db.Table(
+    'order_product',
+    db.Column(
+            'order_id', 
+            db.Integer, 
+            db.ForeignKey('order.id'),
+            primary_key=True
+            ),
+    db.Column(
+            'product_id', 
+            db.Integer, 
+            db.ForeignKey('product.id'),
+            primary_key=True
+            )
+    )
+    
 # customers
 class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -38,6 +55,8 @@ class Order(db.Model):
                         db.ForeignKey('customer.id'), 
                         nullable=False
                     )
+    
+    products = db.Relationship('Product', secondary=order_product)
 
 # products
 class Product(db.Model):
@@ -45,22 +64,7 @@ class Product(db.Model):
     name = db.Column(db.String(50))
     prince = db.Column(db.Float)
 
-# association table for multi-product cart
-order_product = db.Table(
-    'order_product',
-    db.Column(
-            'order_id', 
-            db.Integer, 
-            db.ForeignKey('order.id'),
-            primary_key=True
-            ),
-    db.Column(
-            'product_id', 
-            db.Integer, 
-            db.ForeignKey('product.id'),
-            primary_key=True
-            )
-    )
+
 
 
 ### ROUTES
