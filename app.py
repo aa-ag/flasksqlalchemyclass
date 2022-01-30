@@ -31,7 +31,7 @@ order_product = db.Table(
             primary_key=True
             )
     )
-    
+
 # customers
 class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -46,7 +46,7 @@ class Customer(db.Model):
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     order_date = db.Column(
-                        db.Datetime, 
+                        db.DateTime, 
                         nullable=False, 
                         default=datetime.utcnow
                     )
