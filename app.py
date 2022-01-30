@@ -23,6 +23,8 @@ class Customer(db.Model):
                         nullable=False
                         )
 
+    orders = db.relationship('Order', backref='customer')
+
 # orders
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
