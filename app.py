@@ -62,7 +62,7 @@ class Order(db.Model):
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
-    prince = db.Column(db.Float)
+    price = db.Column(db.Float)
 
 
 ### ROUTES
