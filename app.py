@@ -2,6 +2,7 @@
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from faker import Fake
 
 
 ### GLOBAL
@@ -13,6 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # instatiate the FlaskSQLAlchemy object
 db = SQLAlchemy(app)
 
+fake = Fake()
 
 ### MODELS
 # association table for multi-product cart
