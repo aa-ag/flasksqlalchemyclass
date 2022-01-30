@@ -18,12 +18,24 @@ db = SQLAlchemy(app)
 # customers
 class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50), nullable=False)
+    username = db.Column(
+                        db.String(50), 
+                        nullable=False
+                        )
 
 # orders
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    order_date = db.Column(db.Datetime, nullable=False, default=datetime.utcnow)
+    order_date = db.Column(
+                        db.Datetime, 
+                        nullable=False, 
+                        default=datetime.utcnow
+                        )
+    customer_id = db.Column(
+                        db.Integer, 
+                        db.ForeignKey('customer.id'), 
+                        nullable=False
+                        )
 
 # products
 class Product(db.Model):
