@@ -65,6 +65,4 @@ class Product(db.Model):
     prince = db.Column(db.Float)
 
 
-
-
 ### ROUTES
