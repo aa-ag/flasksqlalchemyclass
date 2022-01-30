@@ -1,4 +1,6 @@
 ### IMPORTS
+from datetime import datetime
+from email.policy import default
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -18,6 +20,11 @@ db = SQLAlchemy(app)
 class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
+
+# orders
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    order_date = db.Column(db.Datetime, nullable=False, default=datetime.utcnow)
 
 
 ### ROUTES
