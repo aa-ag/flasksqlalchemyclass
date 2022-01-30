@@ -56,7 +56,7 @@ class Order(db.Model):
                         nullable=False
                     )
     
-    products = db.Relationship('Product', secondary=order_product)
+    products = db.relationship('Product', secondary=order_product)
 
 # products
 class Product(db.Model):
