@@ -6,6 +6,7 @@ Taking this class via [PrettyPrinted](https://courses.prettyprinted.com/).
 
 - `python3 -m venv env`
 - `source env/bin/activate`
+- `pip3 install Faker` (github: [Faker](https://github.com/joke2k/faker))
 
 ### database creation
 
