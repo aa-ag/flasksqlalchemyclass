@@ -71,8 +71,11 @@ class Product(db.Model):
 ### create dummy data
 def add_customers():
     for i in range(100):
-        username = fake.name()
-        print(username)
+        fake_name = fake.name().lower()
+        first_name_initial = fake_name.split()[0][0]
+        last_name = fake_name.split()[1]
+        username = first_name_initial + last_name
+        print(i+1, username)
 
 
 add_customers()
