@@ -74,8 +74,12 @@ def add_customers():
         fake_name = fake.name().lower()
         first_name_initial = fake_name.split()[0][0]
         last_name = fake_name.split()[1]
-        username = first_name_initial + last_name
-        print(i+1, username)
+        
+        customer = Customer(
+            username = first_name_initial + last_name
+        )
+        db.session.add(customer)
+    db.session.commit()
 
 
 add_customers()
