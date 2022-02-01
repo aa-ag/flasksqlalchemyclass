@@ -3,7 +3,7 @@ from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from faker import Faker
-
+import random
 
 ### GLOBAL
 # instatiate the Flask app/object
@@ -82,6 +82,7 @@ def add_customers():
     db.session.commit()
 
 
+##### Helpers driver
 add_customers()
 
 ### ROUTES
