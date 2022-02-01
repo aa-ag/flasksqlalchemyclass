@@ -2,7 +2,7 @@
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from faker import Fake
+from faker import Faker
 
 
 ### GLOBAL
@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # instatiate the FlaskSQLAlchemy object
 db = SQLAlchemy(app)
 
-fake = Fake()
+fake = Faker()
 
 ### MODELS
 # association table for multi-product cart
@@ -66,5 +66,15 @@ class Product(db.Model):
     name = db.Column(db.String(50))
     price = db.Column(db.Float)
 
+
+### HELPER
+### create dummy data
+def add_customers():
+    for i in range(100):
+        username = fake.name()
+        print(username)
+
+
+add_customers()
 
 ### ROUTES
