@@ -85,8 +85,13 @@ def add_customers():
 def add_products():
     for i in range(100):
         product_name = fake.color_name()
-        price = price = round(random.uniform(0.99, 9.99), 2)
-        print(product_name, price)
+        product_price = price = round(random.uniform(0.99, 9.99), 2)
+        product = Product(
+            name = product_name,
+            price = product_price
+        )
+        db.session.add(product)
+    db.session.commit()
 
 ##### Helpers driver
 # add_customers()
