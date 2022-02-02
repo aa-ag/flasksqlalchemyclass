@@ -84,8 +84,9 @@ def add_customers():
 
 def add_products():
     for i in range(100):
-        product = fake.color_name()
-        print(product)
+        product_name = fake.color_name()
+        price = price = round(random.uniform(0.99, 9.99), 2)
+        print(product_name, price)
 
 ##### Helpers driver
 # add_customers()
