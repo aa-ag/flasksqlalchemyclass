@@ -82,7 +82,13 @@ def add_customers():
     db.session.commit()
 
 
+def add_products():
+    for i in range(100):
+        product = fake.color_name()
+        print(product)
+
 ##### Helpers driver
-add_customers()
+# add_customers()
+add_products()
 
 ### ROUTES
