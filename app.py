@@ -95,10 +95,13 @@ def add_products():
     
 
 def add_orders():
-    pass
+    customers = Customer.query.all()
+    for row in customers:
+        print(row.username)
 
 ##### Helpers driver
 # add_customers()
-add_products()
+# add_products()
+add_orders()
 
 ### ROUTES
