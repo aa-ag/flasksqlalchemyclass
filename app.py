@@ -92,6 +92,10 @@ def add_products():
         )
         db.session.add(product)
     db.session.commit()
+    
+
+def add_orders():
+    pass
 
 ##### Helpers driver
 # add_customers()
