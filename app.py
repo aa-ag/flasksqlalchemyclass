@@ -97,8 +97,11 @@ def add_products():
 def add_orders():
     customers = Customer.query.all()
     products = Product.query.all()
-    for row in products:
-        print(row.name, row.price)
+    
+    random_customer = random.choice(customers)
+    random_product = random.choice(products)
+    
+    print(random_customer.username, random_product.name)
 
 ##### Helpers driver
 # add_customers()
