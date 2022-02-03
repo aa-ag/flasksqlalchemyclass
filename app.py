@@ -103,7 +103,9 @@ def add_orders():
     random_int = random.randint(1, 5)
     random_producs = random.sample(products, random_int)
     
-    print(random_customer.username, random_producs)
+    random_date = fake.date_this_year()
+
+    print(random_date)
 
 ##### Helpers driver
 # add_customers()
