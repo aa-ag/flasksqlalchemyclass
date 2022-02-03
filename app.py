@@ -98,14 +98,22 @@ def add_orders():
     customers = Customer.query.all()
     products = Product.query.all()
 
-    random_customer = random.choice(customers)
-    
-    random_int = random.randint(1, 5)
-    random_producs = random.sample(products, random_int)
-    
-    random_date = fake.date_this_year()
+    for i in range(100):
+        random_customer = random.choice(customers)
+        
+        random_int = random.randint(1, 5)
+        random_producs = random.sample(products, random_int)
+        
+        random_date = fake.date_this_year()
 
-    print(random_date)
+        order = Order(
+            order_date = random_date,
+            customer_id = random_customer.id,
+            products = random_producs
+        )
+        db.session.add(order)
+    db.session.commit()
+    
 
 ##### Helpers driver
 # add_customers()
