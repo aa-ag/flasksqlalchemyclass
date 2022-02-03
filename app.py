@@ -96,8 +96,9 @@ def add_products():
 
 def add_orders():
     customers = Customer.query.all()
-    for row in customers:
-        print(row.username)
+    products = Product.query.all()
+    for row in products:
+        print(row.name, row.price)
 
 ##### Helpers driver
 # add_customers()
