@@ -1,5 +1,6 @@
 ### IMPORTS
 from datetime import datetime
+from tracemalloc import start
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from faker import Faker
@@ -127,7 +128,6 @@ def get_order_by_id(customer_id=1):
                                 ).all()
 
     for order in customer_orders:
-        print(f"\nuser: {order.customer.username}")
-        print(f"order placed on: {order.order_date}")
-        for n, product in enumerate(order.products):
+        print(f"\n{order.customer.username}'s order: {order.order_date}")
+        for n, product in enumerate(order.products, start=1):
             print(f"#{n} item ordered: {product.name} -- {product.price}")
