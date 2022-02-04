@@ -137,7 +137,7 @@ def get_sorted_orders(customer_id=1):
     customer_orders = Order.query.filter_by(
                                     customer_id=customer_id
                                 ).order_by(
-                                    Order.order_date.desc()
+                                    Order.order_date.asc()
                                 ).all()
     
     for order in customer_orders:
