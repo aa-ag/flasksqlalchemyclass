@@ -131,3 +131,7 @@ def get_order_by_id(customer_id=1):
         print(f"\n{order.customer.username}'s order: {order.order_date}")
         for n, product in enumerate(order.products, start=1):
             print(f"#{n} item ordered: {product.name} -- {product.price}")
+
+
+def get_sorted_orders(customer_id=1):
+    pass
