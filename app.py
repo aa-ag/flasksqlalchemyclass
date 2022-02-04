@@ -121,3 +121,5 @@ def add_orders():
 add_orders()
 
 ### ROUTES
+def get_order_by_id(customer_id):
+    pass
