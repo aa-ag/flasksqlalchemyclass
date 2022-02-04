@@ -127,7 +127,7 @@ def get_order_by_id(customer_id=1):
                                 ).all()
 
     for order in customer_orders:
-        print(f"user: {order.customer.username}")
+        print(f"\nuser: {order.customer.username}")
         print(f"order placed on: {order.order_date}")
-        for product in order.products:
-            print(f"item ordered: {product.name} -- {product.price}")
+        for n, product in enumerate(order.products):
+            print(f"#{n} item ordered: {product.name} -- {product.price}")
