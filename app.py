@@ -127,5 +127,5 @@ def get_order_by_id(customer_id=1):
                                 ).all()
 
     for order in customer_orders:
-        print(order.id)
-        print(order.products)
+        print(order.customer.username)
+        
