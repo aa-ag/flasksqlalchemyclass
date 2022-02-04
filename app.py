@@ -118,8 +118,14 @@ def add_orders():
 ##### Helpers driver
 # add_customers()
 # add_products()
-add_orders()
+# add_orders()
 
 ### ROUTES
-def get_order_by_id(customer_id):
-    pass
+def get_order_by_id(customer_id=1):
+    customer_orders = Order.query.filter_by(
+                                    customer_id=customer_id
+                                ).all()
+
+    for order in customer_orders:
+        print(order.id)
+        print(order.products)
