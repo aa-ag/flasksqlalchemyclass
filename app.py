@@ -127,5 +127,6 @@ def get_order_by_id(customer_id=1):
                                 ).all()
 
     for order in customer_orders:
-        print(order.customer.username)
+        print(f"user: {order.customer.username}")
+        print(f"order placed on: {order.order_date}")
         
