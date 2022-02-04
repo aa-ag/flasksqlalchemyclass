@@ -134,4 +134,11 @@ def get_order_by_id(customer_id=1):
 
 
 def get_sorted_orders(customer_id=1):
-    pass
+    customer_orders = Order.query.filter_by(
+                                    customer_id=customer_id
+                                ).order_by(
+                                    Order.order_date.desc()
+                                ).all()
+    
+    for order in customer_orders:
+        print(order.order_date)
