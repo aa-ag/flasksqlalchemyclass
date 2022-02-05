@@ -148,5 +148,9 @@ def get_sorted_orders(customer_id=1):
 
 def t30days_revenue():
     print("Revenue for last 30 days:")
+    current_datetime = datetime.now()
+    a_month_ago = current_datetime - timedelta(30)
+    print(a_month_ago)
 
-    
+
+t30days_revenue()
