@@ -1,10 +1,12 @@
 ### IMPORTS
-from datetime import datetime
+from datetime import date, datetime
+from operator import imod
 from tracemalloc import start
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from faker import Faker
 import random
+from datetime import timedelta
 
 ### GLOBAL
 # instatiate the Flask app/object
@@ -145,4 +147,6 @@ def get_sorted_orders(customer_id=1):
 
 
 def t30days_revenue():
-    pass
+    print("Revenue for last 30 days:")
+
+    
