@@ -162,8 +162,8 @@ def revenue_for_n_days(n=30):
     print("${:,}".format(round(usd, 2)))
 
 
-def best_customers():
-    print("Customers who've spent more than $100.00:")
+def best_customers(threshold=100):
+    print(f"Customers who've spent more than ${threshold}:")
     best = db.session.query(
                             Customer
                         ).join(
@@ -175,10 +175,12 @@ def best_customers():
                         ).group_by(
                             Customer
                         ).having(
-                            db.func.sum(Product.price) > 100
+                            db.func.sum(Product.price) > threshold
                         ).all()
     
     print(len(best))
 
 
 best_customers()
+best_customers(25)
+best_customers(50)
