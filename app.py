@@ -179,10 +179,10 @@ def best_customers(threshold=100):
     
     print(f"{len(best)} customers that have spent ${threshold}.00 or more:")
 
-    for customer in best:
-        print(customer.username)
+    for n, customer in enumerate(best, start=1):
+        print(n, customer.username)
 
 
-best_customers()
-# best_customers(25)
+# best_customers()
+best_customers(25)
 # best_customers(50)
