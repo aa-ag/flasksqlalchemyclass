@@ -150,7 +150,7 @@ def t30days_revenue():
     print("Revenue for last 30 days:")
     current_datetime = datetime.now()
     a_month_ago = current_datetime - timedelta(30)
-    print(a_month_ago)
+    print(db.session.query(db.func.sum(Product.price)).all())
 
 
 t30days_revenue()
