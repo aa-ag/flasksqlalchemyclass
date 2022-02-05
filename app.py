@@ -149,7 +149,7 @@ def get_sorted_orders(customer_id=1):
 def revenue_for_n_days(n=30):
     print(f"Revenue for last {n} days:")
     current_datetime = datetime.now()
-    a_month_ago = current_datetime - timedelta(30)
+    a_month_ago = current_datetime - timedelta(n)
     usd = db.session.query(
                             db.func.sum(Product.price)
                         ).join(
