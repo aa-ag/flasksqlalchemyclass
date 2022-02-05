@@ -159,7 +159,7 @@ def revenue_for_n_days(n=30):
                         ).filter(
                             Order.order_date > a_month_ago
                         ).scalar()
-    print(round(usd, 2))
+    print("${:,}".format(round(usd, 2)))
 
 
 revenue_for_n_days(5)
