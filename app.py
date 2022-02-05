@@ -163,4 +163,22 @@ def revenue_for_n_days(n=30):
 
 
 def best_customers():
-    pass
+    print("Customers who've spent more than $100.00:")
+    best = db.session.query(
+                            Customer
+                        ).join(
+                            Order
+                        ).join(
+                            order_product
+                        ).join(
+                            Product
+                        ).group_by(
+                            Customer
+                        ).having(
+                            db.func.sum(Product.price) > 100
+                        ).all()
+    
+    print(len(best))
+
+
+best_customers()
