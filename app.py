@@ -146,8 +146,8 @@ def get_sorted_orders(customer_id=1):
         print(order.order_date)
 
 
-def t30days_revenue():
-    print("Revenue for last 30 days:")
+def revenue_for_n_days(n=30):
+    print(f"Revenue for last {n} days:")
     current_datetime = datetime.now()
     a_month_ago = current_datetime - timedelta(30)
     usd = db.session.query(
@@ -161,4 +161,5 @@ def t30days_revenue():
                         ).scalar()
     print(round(usd, 2))
 
-t30days_revenue()
+
+revenue_for_n_days()
