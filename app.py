@@ -159,6 +159,6 @@ def t30days_revenue():
                         ).filter(
                             Order.order_date > a_month_ago
                         ).scalar()
-    print(usd)
+    print(round(usd, 2))
 
 t30days_revenue()
