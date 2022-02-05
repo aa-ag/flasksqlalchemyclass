@@ -142,3 +142,7 @@ def get_sorted_orders(customer_id=1):
     
     for order in customer_orders:
         print(order.order_date)
+
+
+def t30days_revenue():
+    pass
