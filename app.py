@@ -162,7 +162,5 @@ def revenue_for_n_days(n=30):
     print("${:,}".format(round(usd, 2)))
 
 
-revenue_for_n_days(5)
-revenue_for_n_days(7)
-revenue_for_n_days(15)
-revenue_for_n_days()
+def best_customers():
+    pass
